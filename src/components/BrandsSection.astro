@@ -1,0 +1,98 @@
+---
+import wave1 from '@assets/svg/wave1.svg';
+import aea from '@assets/png/brands/aea.png';
+import argenplas from '@assets/png/brands/argenplas.png';
+import circutor from '@assets/png/brands/circutor.png';
+import ersha from '@assets/png/brands/ersha.png';
+import finder from '@assets/png/brands/finder.png';
+import fusse from '@assets/png/brands/fusse.png';
+import gatti from '@assets/png/brands/gatti.png';
+import genrod from '@assets/png/brands/genrod.png';
+import microcontrol from '@assets/png/brands/microcontrol.png';
+import nuban from '@assets/png/brands/nuban.png';
+import prysmian from '@assets/png/brands/prysmian.png';
+import schneider from '@assets/png/brands/schneider.png';
+import stm from '@assets/png/brands/stm.png';
+import tea from '@assets/png/brands/tea.png';
+import weg from '@assets/png/brands/weg.png';
+import { Image, Picture } from 'astro:assets';
+---
+
+<section class="brands" id="marcas">
+  <Picture src={wave1} class="brands__wave" alt="Olas" />
+  <h2 class="brands__title">MARCAS CON LAS QUE TRABAJAMOS</h2>
+  <div class="brands__items">
+    <Image src={weg} class="brands__item" alt="WEG" loading="lazy" />
+    <Image src={finder} class="brands__item" alt="Finder" loading="lazy" />
+    <Image src={ersha} class="brands__item" alt="Ersha" loading="lazy" />
+    <Image
+      src={schneider}
+      class="brands__item"
+      alt="Schneider"
+      loading="lazy"
+    />
+    <Image src={fusse} class="brands__item" alt="Fusse" loading="lazy" />
+    <Image src={aea} class="brands__item" alt="AEA" loading="lazy" />
+    <Image src={prysmian} class="brands__item" alt="Prysmian" loading="lazy" />
+    <Image
+      src={argenplas}
+      class="brands__item"
+      alt="Argenplas"
+      loading="lazy"
+    />
+    <Image src={gatti} class="brands__item" alt="Gatti" loading="lazy" />
+    <Image src={genrod} class="brands__item" alt="Genrod" loading="lazy" />
+    <Image
+      src={microcontrol}
+      class="brands__item"
+      alt="Microcontrol"
+      loading="lazy"
+    />
+    <Image src={nuban} class="brands__item" alt="Nuban" loading="lazy" />
+    <Image src={tea} class="brands__item" alt="TEA" loading="lazy" />
+    <Image src={stm} class="brands__item" alt="STM" loading="lazy" />
+    <Image src={circutor} class="brands__item" alt="Circutor" loading="lazy" />
+  </div>
+</section>
+<style>
+  .brands {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem;
+    gap: 3rem;
+    background-color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .brands__wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 102%;
+    object-fit: cover;
+  }
+
+  .brands__title {
+    font-size: 2rem;
+    color: var(--blue);
+    font-weight: 700;
+    text-shadow: var(--text-shadow);
+  }
+  .brands__items {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    gap: 2rem;
+    width: var(--contain-width);
+  }
+
+  .brands__item {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: var(--drop-shadow-image);
+  }
+</style>

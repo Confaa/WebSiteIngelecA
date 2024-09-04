@@ -1,0 +1,113 @@
+---
+import logoBlanco from '@assets/svg/logoIngelecBlanco1px.svg';
+import { Image } from 'astro:assets';
+---
+
+<header class="header" id="site-header">
+  <a href="#home" class="header__logo">
+    <Image src={logoBlanco} alt="Ingelec Logo" height={48} />
+  </a>
+  <nav class="header__nav">
+    <a href="#servicios" class="header__nav-item">Servicios</a>
+    <a href="#marcas" class="header__nav-item">Marcas</a>
+    <a href="#nosotros" class="header__nav-item">Nosotros</a>
+    <a href="#nuestro-local" class="header__nav-item">Nuestro Local</a>
+    <a href="#contacto" class="header__nav-item">Contacto</a>
+  </nav>
+</header>
+<script>
+  const header = document.getElementsByClassName('header')[0];
+  const navItems = document.querySelectorAll('.header__nav-item');
+  const sections = document.querySelectorAll('section[id]');
+
+  const handleScroll = () => {
+    const { scrollY, innerHeight } = window;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    header.classList.toggle('header--scrolled', scrollY > 0);
+
+    if (scrollY === 0) {
+      deactivateAllNavItems();
+    } else if (scrollY + innerHeight >= documentHeight - 50) {
+      activateNavItem('#contacto');
+    } else {
+      updateActiveSection();
+    }
+  };
+
+  const activateNavItem = (id: string) => {
+    navItems.forEach((item) => {
+      item.classList.toggle(
+        'header__nav-item--active',
+        item.getAttribute('href') === id
+      );
+    });
+  };
+
+  const deactivateAllNavItems = () => {
+    navItems.forEach((item) =>
+      item.classList.remove('header__nav-item--active')
+    );
+  };
+
+  const updateActiveSection = () => {
+    const activeSection = [...sections].reverse().find((section) => {
+      const { top, bottom } = section.getBoundingClientRect();
+      return top <= window.innerHeight / 2 && bottom >= window.innerHeight / 2;
+    });
+
+    if (activeSection && activeSection.id !== 'home') {
+      activateNavItem(`#${activeSection.id}`);
+    } else {
+      deactivateAllNavItems();
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('resize', handleScroll);
+
+  // Initial call to set correct state on page load
+  handleScroll();
+</script>
+
+<style>
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100dvw;
+    z-index: 1000;
+    transition: var(--transition);
+  }
+  .header--scrolled {
+    background-color: var(--background-header);
+  }
+
+  .header__logo {
+    cursor: pointer;
+  }
+  .header__nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  .header__nav-item {
+    color: var(--white);
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    text-shadow: var(--text-shadow);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  .header__nav-item:hover {
+    background-color: var(--blue-with-opacity);
+  }
+  .header__nav-item--active {
+    background-color: var(--blue);
+  }
+</style>

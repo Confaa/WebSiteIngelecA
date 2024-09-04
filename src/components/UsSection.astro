@@ -1,0 +1,150 @@
+---
+import wave2 from '@assets/svg/wave2.svg';
+import { Picture } from 'astro:assets';
+---
+
+<section class="us" id="nosotros">
+  <Picture src={wave2} alt="wave" class="us__wave" />
+  <span class="us__fliter"></span>
+  <div class="us__content">
+    <h2 class="us__title">UN POCO SOBRE NOSOTROS</h2>
+    <span class="us__cards">
+      <span class="us__card">
+        <span class="us__date">1996</span>
+        <p class="us__card-text">
+          Fundación como INGELEC, centrada en la comercialización de productos
+          eléctricos para respaldar los servicios iniciados 4 años antes. Este
+          enfoque impulsó el crecimiento mediante la fabricación de tableros y
+          reparación de motores eléctricos.
+        </p>
+      </span>
+      <span class="us__card">
+        <span class="us__date">1997</span>
+        <p class="us__card-text">
+          Inicio de la venta de los primeros motores eléctricos con sus
+          respectivos tableros, marcando una conversión clave al reemplazar
+          motores diesel por eléctricos
+        </p>
+      </span>
+      <span class="us__card">
+        <span class="us__date">2000</span>
+        <p class="us__card-text">
+          Incorporación crucial de la marca WEG para la comercialización de
+          motores, generadores y accionamientos eléctricos, ampliando
+          significativamente la oferta de la empresa.
+        </p>
+      </span>
+      <span class="us__card">
+        <span class="us__date">2016</span>
+        <p class="us__card-text">
+          Se suministró equipamiento eléctrico (motores y tableros) a la
+          estación de bombeo para riego de arroz más grande de Argentina,
+          ubicada en Paraje Yahape, Corrientes, sobre el Río Paraná. La
+          estación, que reemplazó el equipo de riego diesel existente, tiene una
+          potencia instalada de 9500 HP y riega más de 10000 hectáreas.
+        </p>
+      </span>
+      <span class="us__card">
+        <span class="us__date">2016</span>
+        <p class="us__card-text">
+          Hitos destacados en la trayectoria de la empresa con dos proyectos
+          significativos. La primera involucra la construcción de la planta de
+          silo y almacenamiento de arroz para COPRA S.A. en Mercedes,
+          Corrientes. Se instalaron más de 130 motores con una potencia total de
+          2000 HP.
+        </p>
+      </span>
+      <span class="us__card">
+        <span class="us__date">Actualidad</span>
+        <p class="us__card-text">
+          Estos hitos representan momentos clave en la evolución de la empresa,
+          consolidando su presencia en el sector eléctrico y fortaleciendo su
+          posición como proveedor líder de soluciones eléctricas.
+        </p>
+      </span>
+    </span>
+  </div>
+</section>
+
+<style>
+  .us {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('@assets/png/backgroundUs.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem;
+  }
+
+  .us__fliter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .us__wave {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .us__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    z-index: 2;
+    margin: 8rem 0;
+    width: var(--contain-width);
+  }
+  .us__title {
+    font-size: 2rem;
+    color: var(--blue);
+    font-weight: 700;
+  }
+  .us__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .us__card {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border: var(--blue) 2px solid;
+    border-radius: var(--border-radius);
+  }
+
+  .us__date {
+    position: absolute;
+    font-size: 1.25rem;
+    color: var(--white);
+    background-color: var(--blue);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    top: -1.25rem;
+    right: 1rem;
+  }
+
+  .us__card-text {
+    font-size: 1rem;
+    text-align: center;
+    color: var(--blue);
+    font-weight: 500;
+  }
+</style>

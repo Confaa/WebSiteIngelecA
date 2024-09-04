@@ -1,0 +1,106 @@
+---
+import location from '@assets/svg/location.svg';
+import { Image } from 'astro:assets';
+---
+
+<section class="bussiness" id="nuestro-local">
+  <span class="bussiness__rectangle"></span>
+  <div class="bussiness__contain">
+    <span class="bussiness__contain-location">
+      <h2 class="bussiness__location-title">¿DONDE NOS ENCONTRÁS?</h2>
+      <iframe
+        title="Ubicación de INGELEC S.R.L."
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3428.31247872334!2d-57.994152923552065!3d-30.76580816510484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95ad0d3b6aeb5cbb%3A0xe7e0d677f0f0886!2sINGELEC%20S.R.L.!5e0!3m2!1ses-419!2sar!4v1725288358133!5m2!1ses-419!2sar"
+        width="600"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <span class="bussiness__location">
+        <Image
+          src={location}
+          class={'bussiness__location-icon'}
+          alt="location"
+        />
+
+        <p class="bussiness__location-text">
+          Av. Alem 1355 (E3228) - Chajarí, Entre Ríos, Argentina
+        </p>
+      </span>
+    </span>
+    <span class="bussiness__img"></span>
+  </div>
+</section>
+<style>
+  .bussiness {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bussiness__rectangle {
+    position: absolute;
+    left: -10%;
+    bottom: -12.5%;
+    width: 65%;
+    height: 150%;
+    rotate: 100deg;
+    border-top: var(--orange-with-opacity) 0.5rem solid;
+    background-color: var(--blue);
+  }
+
+  .bussiness__contain {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+    height: 100%;
+  }
+
+  .bussiness__contain-location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem;
+    gap: 2rem;
+    z-index: 2;
+  }
+
+  .bussiness__location {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .bussiness__location-title {
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: var(--text-shadow);
+  }
+
+  .bussiness__location-icon {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .bussiness__location-text {
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  .bussiness__img {
+    background-image: url('@assets/png/bussiness.jpg');
+    background-size: cover;
+    background-position-y: center;
+    background-position-x: right;
+    background-repeat: no-repeat;
+    transform: scale(1.15);
+    height: 100%;
+    z-index: -1;
+  }
+</style>

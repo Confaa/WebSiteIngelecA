@@ -1,0 +1,176 @@
+---
+import { Image, Picture } from 'astro:assets';
+import test from '@assets/svg/test.svg';
+import wegBlanco from '@assets/svg/wegBlanco.svg';
+import check from '@assets/svg/check.svg';
+import undrawCertificate from '@assets/png/undrawCertificate.png';
+---
+
+<section class="our-services" id="servicios">
+  <h2 class="our-services__title">NUESTROS SERVICIOS</h2>
+
+  <div class="our-services__cards">
+    <span class="our-services__card">
+      <Image src={test} alt="Icono" />
+      <p class="our-services__card-text">Venta de insumos eléctricos</p>
+    </span>
+    <span class="our-services__card">
+      <Image src={test} alt="Icono" />
+      <p class="our-services__card-text">
+        Asesoría profesional en electricidad industrial
+      </p>
+    </span>
+    <span class="our-services__card">
+      <Image src={test} alt="Icono" />
+      <p class="our-services__card-text">
+        Armado de tableros eléctricos a medida
+      </p>
+    </span>
+    <span class="our-services__card">
+      <Image src={test} alt="Icono" />
+      <p class="our-services__card-text">
+        Reparación de variadores de frecuencia y arranque suave
+      </p>
+    </span>
+    <span class="our-services__card">
+      <Image src={test} alt="Icono" />
+      <p class="our-services__card-text">
+        Reparación de motores eléctricos monofásicos y trifásicos
+      </p>
+    </span>
+  </div>
+  <div class="our-services__technical-assistant">
+    <Image
+      src={wegBlanco}
+      class="our-services__technical-assistant-img"
+      alt="WEG"
+    />
+    <div class="our-services__technical-assistant-contain-text">
+      <p class="our-services__technical-assistant-text">
+        Somos asistentes tecnicos autorizados de la Marca WEG en:
+      </p>
+      <span class="our-services__technical-assistant-items-list">
+        <span class="our-services__technical-assistant-item"
+          ><Image src={check} alt={'Icono'} /><p
+            class="our-services__technical-assistant-text"
+          >
+            Motores eléctricos monofásicos y trifásicos de corriente alterna /
+            baja tensión, hasta carcasa IEC 200
+          </p></span
+        >
+        <span class="our-services__technical-assistant-item"
+          ><Image src={check} alt={'Icono'} /><p
+            class="our-services__technical-assistant-text"
+          >
+            Convertidores de frecuencia (baja tensión)
+          </p></span
+        >
+        <span class="our-services__technical-assistant-item"
+          ><Image src={check} alt={'Icono'} /><p
+            class="our-services__technical-assistant-text"
+          >
+            Arranques suaves (baja tensión)
+          </p></span
+        >
+        <span class="our-services__technical-assistant-item"
+          ><Image src={check} alt={'Icono'} /><p
+            class="our-services__technical-assistant-text"
+          >
+            Tableros eléctricos (baja tensión)
+          </p></span
+        >
+      </span>
+    </div>
+    <Picture
+      src={undrawCertificate}
+      class="our-services__technical-assistant-img"
+      formats={['avif', 'webp']}
+      alt="WEG"
+      loading="lazy"
+      quality={100}
+    />
+  </div>
+</section>
+<style>
+  .our-services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6rem 2rem;
+    background-color: var(--blue);
+    gap: 3rem;
+    position: relative;
+  }
+  .our-services__title {
+    font-size: 2rem;
+    color: var(--white);
+    font-weight: 700;
+    text-shadow: var(--text-shadow);
+  }
+
+  .our-services__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    width: var(--contain-width);
+  }
+
+  .our-services__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    border: var(--orange) 0.25rem solid;
+    align-items: center;
+  }
+
+  .our-services__card-text {
+    font-size: 1.5rem;
+    color: var(--blue);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .our-services__technical-assistant {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    margin-top: 4rem;
+    align-items: center;
+    gap: 2rem;
+    text-shadow: var(--text-shadow);
+    width: var(--contain-width);
+  }
+
+  .our-services__technical-assistant-contain-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .our-services__technical-assistant-text {
+    font-size: 1.5rem;
+    color: var(--white);
+    font-weight: 600;
+    text-align: start;
+  }
+  .our-services__technical-assistant-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+  }
+  .our-services__technical-assistant-item {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+  }
+  .our-services__technical-assistant-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+</style>
