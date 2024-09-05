@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  web-site-ingelec:
+    build: .
+    ports:
+      - "4321:4321"
+    environment:
+      NODE_ENV: production
+    
