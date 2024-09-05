@@ -1,6 +1,8 @@
-import { defineConfig, passthroughImageService } from "astro/config";
+import { defineConfig } from "astro/config";
+export default defineConfig({
+ server: {
+    host: true,
+  },
+  
 
-defineConfig({
-    image:{
-        service:passthroughImageService()
-    },});
+});
