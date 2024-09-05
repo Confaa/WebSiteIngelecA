@@ -1,6 +1,10 @@
 ---
 import { Image, Picture } from 'astro:assets';
-import test from '@assets/svg/test.svg';
+import store from '@assets/svg/store.svg';
+import handshake from '@assets/svg/handshake.svg';
+import blocks from '@assets/svg/blocks.svg';
+import circuitBoard from '@assets/svg/circuitBoard.svg';
+import zap from '@assets/svg/zap.svg';
 import wegBlanco from '@assets/svg/wegBlanco.svg';
 import check from '@assets/svg/check.svg';
 import undrawCertificate from '@assets/png/undrawCertificate.png';
@@ -11,29 +15,29 @@ import undrawCertificate from '@assets/png/undrawCertificate.png';
 
   <div class="our-services__cards">
     <span class="our-services__card">
-      <Image src={test} alt="Icono" />
+      <Image src={store} class="our-services__card-svg" alt="Icono" />
       <p class="our-services__card-text">Venta de insumos eléctricos</p>
     </span>
     <span class="our-services__card">
-      <Image src={test} alt="Icono" />
+      <Image src={handshake} class="our-services__card-svg" alt="Icono" />
       <p class="our-services__card-text">
         Asesoría profesional en electricidad industrial
       </p>
     </span>
     <span class="our-services__card">
-      <Image src={test} alt="Icono" />
+      <Image src={blocks} class="our-services__card-svg" alt="Icono" />
       <p class="our-services__card-text">
         Armado de tableros eléctricos a medida
       </p>
     </span>
     <span class="our-services__card">
-      <Image src={test} alt="Icono" />
+      <Image src={circuitBoard} class="our-services__card-svg" alt="Icono" />
       <p class="our-services__card-text">
         Reparación de variadores de frecuencia y arranque suave
       </p>
     </span>
     <span class="our-services__card">
-      <Image src={test} alt="Icono" />
+      <Image src={zap} class="our-services__card-svg" alt="Icono" />
       <p class="our-services__card-text">
         Reparación de motores eléctricos monofásicos y trifásicos
       </p>
@@ -51,7 +55,7 @@ import undrawCertificate from '@assets/png/undrawCertificate.png';
       </p>
       <span class="our-services__technical-assistant-items-list">
         <span class="our-services__technical-assistant-item"
-          ><Image src={check} alt={'Icono'} /><p
+          ><Image src={check} alt={'Icono'} class="our-services__technical-assistant-icon"/><p
             class="our-services__technical-assistant-text"
           >
             Motores eléctricos monofásicos y trifásicos de corriente alterna /
@@ -59,21 +63,21 @@ import undrawCertificate from '@assets/png/undrawCertificate.png';
           </p></span
         >
         <span class="our-services__technical-assistant-item"
-          ><Image src={check} alt={'Icono'} /><p
+          ><Image src={check} alt={'Icono'} class="our-services__technical-assistant-icon"/><p
             class="our-services__technical-assistant-text"
           >
             Convertidores de frecuencia (baja tensión)
           </p></span
         >
         <span class="our-services__technical-assistant-item"
-          ><Image src={check} alt={'Icono'} /><p
+          ><Image src={check} alt={'Icono'} class="our-services__technical-assistant-icon"/><p
             class="our-services__technical-assistant-text"
           >
             Arranques suaves (baja tensión)
           </p></span
         >
         <span class="our-services__technical-assistant-item"
-          ><Image src={check} alt={'Icono'} /><p
+          ><Image src={check} alt={'Icono'} class="our-services__technical-assistant-icon"/><p
             class="our-services__technical-assistant-text"
           >
             Tableros eléctricos (baja tensión)
@@ -83,9 +87,9 @@ import undrawCertificate from '@assets/png/undrawCertificate.png';
     </div>
     <Picture
       src={undrawCertificate}
-      class="our-services__technical-assistant-img"
+      class="our-services__technical-assistant-img our-services__technical-assistant-img--ilustration"
       formats={['avif', 'webp']}
-      alt="WEG"
+      alt="Ilustración"
       loading="lazy"
       quality={100}
     />
@@ -110,8 +114,6 @@ import undrawCertificate from '@assets/png/undrawCertificate.png';
 
   .our-services__cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     gap: 1rem;
     width: var(--contain-width);
   }
@@ -128,7 +130,6 @@ import undrawCertificate from '@assets/png/undrawCertificate.png';
   }
 
   .our-services__card-text {
-    font-size: 1.5rem;
     color: var(--blue);
     font-weight: 600;
     text-align: center;
@@ -136,7 +137,6 @@ import undrawCertificate from '@assets/png/undrawCertificate.png';
 
   .our-services__technical-assistant {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
     margin-top: 4rem;
     align-items: center;
     gap: 2rem;
@@ -159,7 +159,7 @@ import undrawCertificate from '@assets/png/undrawCertificate.png';
   .our-services__technical-assistant-items-list {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: .5rem;
     padding: 0;
   }
   .our-services__technical-assistant-item {
@@ -172,5 +172,306 @@ import undrawCertificate from '@assets/png/undrawCertificate.png';
     width: 100%;
     height: 100%;
     object-fit: contain;
+  }
+
+  /* iPhone 5/SE (320x568) */
+  @media (max-width: 320px) and (max-height: 568px) {
+    .our-services__title {
+      font-size: 1.25rem;
+    }
+    .our-services__cards {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(5, 1fr);
+    }
+    .our-services__card {
+      padding: 1rem;
+    }
+    .our-services__card-svg {
+      width: 3rem;
+      height: 3rem;
+    }
+    .our-services__card-text {
+      font-size: 1rem;
+    }
+    .our-services__technical-assistant {
+      grid-template-rows: auto auto;
+    }
+    .our-services__technical-assistant-img--ilustration {
+      display: none;
+    }
+    .our-services__technical-assistant-text{
+      font-size:1rem;
+    }
+    .our-services__technical-assistant-icon{
+      height:2rem;
+      width:2rem;
+    }
+  }
+
+  /* iPhone 6/7/8 (375x667) */
+  @media (min-width: 321px) and (max-width: 375px) and (max-height: 667px) {
+    .our-services__title {
+      font-size: 1.5rem;
+    }
+    .our-services__cards {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(5, 1fr);
+    }
+    .our-services__card {
+      padding: 1rem;
+    }
+    .our-services__card-svg {
+      width: 3rem;
+      height: 3rem;
+    }
+    .our-services__card-text {
+      font-size: 1rem;
+    }
+    .our-services__technical-assistant {
+      grid-template-rows: auto auto;
+    }
+    .our-services__technical-assistant-img--ilustration {
+      display: none;
+    }
+    .our-services__technical-assistant-text{
+      font-size:1rem;
+    }
+
+    .our-services__technical-assistant-icon{
+      height:2rem;
+      width:2rem;
+    }
+  }
+
+  /* iPhone XR (414x896) */
+  @media (min-width: 376px) and (max-width: 414px) and (max-height: 896px) {
+    .our-services__title {
+      font-size: 1.5rem;
+    }
+    .our-services__cards {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(5, 1fr);
+    }
+    .our-services__card {
+      padding: 1rem;
+    }
+    .our-services__card-svg {
+      width: 3rem;
+      height: 3rem;
+    }
+    .our-services__card-text {
+      font-size: 1rem;
+    }
+    .our-services__technical-assistant {
+      grid-template-rows: auto auto;
+    }
+    .our-services__technical-assistant-img--ilustration {
+      display: none;
+    }
+    .our-services__technical-assistant-text{
+      font-size:1rem;
+    }
+
+    .our-services__technical-assistant-icon{
+      height:2rem;
+      width:2rem;
+    }
+  }
+
+  /* iPhone 12 Pro (390x844) */
+  @media (min-width: 375px) and (max-width: 390px) and (max-height: 844px) {
+    .our-services__title {
+      font-size: 1.5rem;
+    }
+    .our-services__cards {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(5, 1fr);
+    }
+    .our-services__card {
+      padding: 1rem;
+    }
+    .our-services__card-svg {
+      width: 3rem;
+      height: 3rem;
+    }
+    .our-services__card-text {
+      font-size: 1.25rem;
+    }
+    .our-services__technical-assistant {
+      grid-template-rows: auto auto;
+    }
+    .our-services__technical-assistant-img--ilustration {
+      display: none;
+    }
+    .our-services__technical-assistant-text{
+      font-size:1rem;
+    }
+
+    .our-services__technical-assistant-icon{
+      height:2rem;
+      width:2rem;
+    }
+  }
+
+  /* iPad (768x1024) */
+  @media (min-width: 415px) and (max-width: 768px) and (max-height: 1024px) {
+    .our-services__title {
+      font-size: 1.5rem;
+    }
+    .our-services__cards {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+    .our-services__card {
+      padding: 1rem;
+    }
+    .our-services__card-svg {
+      width: 4rem;
+      height: 4rem;
+    }
+    .our-services__card-text {
+      font-size: 1.25rem;
+    }
+    .our-services__technical-assistant {
+      grid-template-columns: 1fr 2fr;
+    }
+    .our-services__technical-assistant-img--ilustration {
+      display: none;
+    }
+    .our-services__technical-assistant-text{
+      font-size:1rem;
+    }
+
+    .our-services__technical-assistant-icon{
+      height:2.5rem;
+      width:2.5rem;
+    }
+  }
+
+  /* iPad Pro (1024x1366) */
+  @media (min-width: 769px) and (max-width: 1024px) and (max-height: 1366px) {
+    .our-services__title {
+      font-size: 2rem;
+    }
+    .our-services__cards {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+    .our-services__card {
+      padding: 1rem;
+    }
+    .our-services__card-svg {
+      width: 4rem;
+      height: 4rem;
+    }
+    .our-services__card-text {
+      font-size: 1.25rem;
+    }
+    .our-services__technical-assistant {
+      grid-template-columns: 1fr 2fr;
+    }
+    .our-services__technical-assistant-img--ilustration {
+      display: none;
+    }
+    .our-services__technical-assistant-text{
+      font-size:1.25rem;
+    }
+
+    .our-services__technical-assistant-icon{
+      height:2.5rem;
+      width:2.5rem;
+    }
+  }
+
+  /* HD (1366x768) */
+  @media (min-width: 1025px) and (max-width: 1366px) and (max-height: 768px) {
+    .our-services__title {
+      font-size: 2rem;
+    }
+
+    .our-services__cards {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    .our-services__card {
+      padding: 1rem;
+    }
+    .our-services__card-svg {
+      width: 5rem;
+      height: 5rem;
+    }
+    .our-services__card-text {
+      font-size: 1.5rem;
+    }
+    .our-services__technical-assistant {
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+    .our-services__technical-assistant-text{
+      font-size:1.25rem;
+    }
+
+    .our-services__technical-assistant-icon{
+      height:2.5rem;
+      width:2.5rem;
+    }
+  }
+
+  /* MacBook Pro (1440x900) */
+  @media (min-width: 1367px) and (max-width: 1440px) and (max-height: 900px) {
+    .our-services__title {
+      font-size: 2rem;
+    }
+    .our-services__cards {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    .our-services__card-svg {
+      width: 5rem;
+      height: 5rem;
+    }
+
+    .our-services__card-text {
+      font-size: 1.5rem;
+    }
+    .our-services__technical-assistant {
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+    .our-services__technical-assistant-text{
+      font-size:1.5rem;
+    }
+
+    .our-services__technical-assistant-icon{
+      height:2.5rem;
+      width:2.5rem;
+    }
+  }
+
+  /* Full HD (1920x1080) */
+  @media (min-width: 1441px) and (max-width: 1920px) and (max-height: 1080px) {
+    .our-services__title {
+      font-size: 2.5rem;
+    }
+    .our-services__cards {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    .our-services__card-svg {
+      width: 5rem;
+      height: 5rem;
+    }
+    .our-services__card-text {
+      font-size: 1.75rem;
+    }
+    .our-services__technical-assistant {
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+    .our-services__technical-assistant-text{
+      font-size:1.5rem;
+    }
+
+    .our-services__technical-assistant-icon{
+      height:3rem;
+      width:3rem;
+    }
   }
 </style>
