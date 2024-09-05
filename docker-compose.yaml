@@ -8,8 +8,8 @@ services:
     environment:
       NODE_ENV: production
     networks:
-      - ingelec-network
+      - websiteingelec-network
 networks:
-  ingelec-network:
+  websiteingelec-network:
     driver: bridge
     
