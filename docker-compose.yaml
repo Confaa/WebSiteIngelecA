@@ -6,4 +6,9 @@ services:
       - "4321:4321"
     environment:
       NODE_ENV: production
+    networks:
+      - ingelec-network
+networks:
+  ingelec-network:
+    driver: bridge
     
