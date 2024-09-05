@@ -2,6 +2,7 @@ version: '3.8'
 services:
   web-site-ingelec:
     build: .
+    restart: always
     ports:
       - "4321:4321"
     environment:
