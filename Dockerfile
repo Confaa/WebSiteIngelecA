@@ -1,23 +1,11 @@
-# ---- Base ----
-    FROM node:lts AS base
-    WORKDIR /app
-    
-    COPY . .
-    
-    # install all dependencies
-    RUN npm install
-    
-    # ---- Build ----
-    FROM base AS build
-    WORKDIR /app
-    
-    RUN npm run build
-    
-    # ---- Release ----
-    FROM nginx:1.21-alpine
-    
-    # copy static files to nginx server root
-    COPY --from=build /app/dist /usr/share/nginx/html
-    
-    # start Nginx in the foreground when the container is run
-    CMD ["nginx", "-g", "daemon off;"]
+FROM node:lts AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+FROM nginx:alpine AS runtime
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 8080

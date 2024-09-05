@@ -1,4 +1,4 @@
-import { defineConfig, passthroughImageService } from "astro/config";
+import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap"
 export default defineConfig({
   output:'static',
@@ -7,8 +7,5 @@ export default defineConfig({
   },
   site:'https://ingelecsrl.com.ar',
   integrations:[sitemap()],
-  image:{
-    service:passthroughImageService()
-  }
 
 });
