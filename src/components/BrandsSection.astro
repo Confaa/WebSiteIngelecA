@@ -55,6 +55,7 @@ import { Image, Picture } from 'astro:assets';
   </div>
 </section>
 <style>
+  /* Brands section with flex layout and centered content */
   .brands {
     display: flex;
     flex-direction: column;
@@ -66,6 +67,8 @@ import { Image, Picture } from 'astro:assets';
     position: relative;
     overflow: hidden;
   }
+
+  /* Wave background image */
   .brands__wave {
     position: absolute;
     top: -1%;
@@ -74,6 +77,7 @@ import { Image, Picture } from 'astro:assets';
     object-fit: cover;
   }
 
+  /* Title styling */
   .brands__title {
     color: var(--blue);
     font-size: 1.25rem;
@@ -81,6 +85,8 @@ import { Image, Picture } from 'astro:assets';
     text-shadow: var(--text-shadow);
     text-align: center;
   }
+
+  /* Brands items in grid layout */
   .brands__items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -96,53 +102,46 @@ import { Image, Picture } from 'astro:assets';
     filter: var(--drop-shadow-image);
   }
 
-  /* sm: Para dispositivos con un ancho mínimo de 640px (teléfonos grandes y pequeños en horizontal) */
-  @media (width >= 640px) {
+  /* Media queries */
+
+  /* For devices with a minimum width of 640px */
+  @media (min-width: 640px) {
     .brands__title {
       font-size: 1.5rem;
     }
+
     .brands__items {
       grid-template-columns: repeat(3, 1fr);
     }
   }
 
-  /* md: Para dispositivos con un ancho mínimo de 768px (tablets en modo vertical y laptops pequeñas) */
-  @media (width >= 768px) {
+  /* For devices with a minimum width of 1024px */
+  @media (min-width: 1024px) {
     .brands__title {
       font-size: 1.5rem;
     }
-    .brands__items {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
 
-  /* lg: Para dispositivos con un ancho mínimo de 1024px (tablets en modo horizontal y laptops estándar) */
-  @media (width >= 1024px) {
-    .brands__title {
-      font-size: 1.5rem;
-    }
     .brands__items {
       grid-template-columns: repeat(4, 1fr);
     }
   }
 
-  /* xl: Para dispositivos con un ancho mínimo de 1280px (laptops grandes y monitores de escritorio) */
-  @media (width >= 1280px) {
+  /* For devices with a minimum width of 1280px */
+  @media (min-width: 1280px) {
     .brands__title {
       font-size: 2rem;
     }
+
     .brands__items {
       grid-template-columns: repeat(5, 1fr);
     }
   }
 
-  /* 2xl: Para dispositivos con un ancho mínimo de 1536px (pantallas ultra grandes y monitores 4K) */
-  @media (width >= 1536px) {
+  /* For devices with a minimum width of 1536px */
+  @media (min-width: 1536px) {
     .brands__title {
       font-size: 2.5rem;
     }
-    .brands__items {
-      grid-template-columns: repeat(5, 1fr);
-    }
   }
 </style>
+

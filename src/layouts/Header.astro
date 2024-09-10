@@ -21,9 +21,9 @@ import { Image } from 'astro:assets';
   </span>
 </header>
 <style>
+  /* Header with flex layout and fixed position */
   .header {
     display: flex;
-    flex-direction:;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
@@ -33,13 +33,17 @@ import { Image } from 'astro:assets';
     transition: var(--transition);
   }
 
+  /* Background color when scrolled */
   .header--scrolled {
     background-color: var(--background-header);
   }
 
+  /* Logo with cursor pointer */
   .header__logo {
     cursor: pointer;
   }
+
+  /* Navigation bar for larger screens */
   .header__nav {
     display: flex;
     flex-direction: row;
@@ -47,6 +51,7 @@ import { Image } from 'astro:assets';
     transition: var(--transition-mobile-menu);
   }
 
+  /* Mobile menu hidden by default */
   .header__mobile-menu {
     display: none;
     align-items: end;
@@ -60,31 +65,29 @@ import { Image } from 'astro:assets';
     z-index: 1000;
   }
 
-  .header__mobile-menu-top {
-    width: 2.5rem;
+  /* Styling for mobile menu lines */
+  .header__mobile-menu-top,
+  .header__mobile-menu-center,
+  .header__mobile-menu-bottom {
     height: 0.25rem;
     background-color: var(--white);
     text-shadow: var(--text-shadow);
     border-radius: var(--border-radius);
+  }
+
+  .header__mobile-menu-top {
+    width: 2.5rem;
   }
 
   .header__mobile-menu-center {
     width: 2.25rem;
-    height: 0.25rem;
-    background-color: var(--white);
-    text-shadow: var(--text-shadow);
-    border-radius: var(--border-radius);
   }
 
   .header__mobile-menu-bottom {
     width: 2rem;
-    height: 0.25rem;
-    background-color: var(--white);
-    text-shadow: var(--text-shadow);
-    border-radius: var(--border-radius);
   }
 
-  
+  /* Navigation item styles */
   .header__nav-item {
     color: var(--white);
     font-size: 1.25rem;
@@ -96,34 +99,40 @@ import { Image } from 'astro:assets';
     text-decoration: none;
     transition: var(--transition);
   }
+
   .header__nav-item:hover {
     background-color: var(--blue-with-opacity);
   }
+
   .header__nav-item--active {
     background-color: var(--blue);
   }
-@media (max-width: 1024px) {
-  .header__nav {
-    padding: 1rem;
-    padding-top: var(--header-padding-top);
-    position: absolute;
-    flex-direction: column;
-    top: 0;
-    right: 0;
-    background-color: var(--background-header);
-    height: 100dvh;
-    width: fit-content;
-    align-items: end;
-  }
-  .header__nav--hidden {
-    right: -100%;
-  }
 
-  .header__mobile-menu {
-    display: flex;
+  /* Media query for screens smaller than 1024px */
+  @media (max-width: 1024px) {
+    .header__nav {
+      padding: 1rem;
+      padding-top: var(--header-padding-top);
+      position: absolute;
+      flex-direction: column;
+      top: 0;
+      right: 0;
+      background-color: var(--background-header);
+      height: 100dvh;
+      width: fit-content;
+      align-items: end;
+    }
+
+    .header__nav--hidden {
+      right: -100%;
+    }
+
+    .header__mobile-menu {
+      display: flex;
+    }
   }
-}
 </style>
+
 <script>
   const header = document.getElementsByClassName('header')[0];
   const navItems = document.querySelectorAll('.header__nav-item');

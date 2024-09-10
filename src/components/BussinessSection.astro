@@ -44,37 +44,39 @@ import { Image, Picture } from 'astro:assets';
   </div>
 </section>
 <style>
+  /* Main container for the business section */
   .bussiness {
     position: relative;
     overflow: hidden;
   }
 
+  /* Rotated rectangle */
   .bussiness__rectangle {
     display: none;
     position: absolute;
     width: 65%;
     height: 150%;
     rotate: 100deg;
-    border-top: var(--orange-with-opacity) 0.5rem solid;
     background-color: var(--blue);
+    border-top: var(--orange-with-opacity) 0.5rem solid;
     z-index: 3;
   }
 
+  /* Main grid layout for business content */
   .bussiness__contain {
     display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: 40% 60%;
-    height: 100%;
-    background-color: var(--blue);
     grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blue);
+    height: 100%;
   }
 
   .bussiness__contain-iframe {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%;
     height: 0;
+    padding-bottom: 56.25%;
     overflow: hidden;
   }
 
@@ -86,23 +88,27 @@ import { Image, Picture } from 'astro:assets';
     height: 100%;
     border: 0;
   }
+
+  /* Location container with flex layout */
   .bussiness__contain-location {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    padding: 3rem;
+    align-items: center;
+    justify-content: center;
     gap: 2rem;
+    padding: 3rem;
     z-index: 4;
   }
 
   .bussiness__location {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
   }
+
+  /* Location title styling */
   .bussiness__location-title {
     color: var(--white);
     font-size: 1.25rem;
@@ -122,17 +128,18 @@ import { Image, Picture } from 'astro:assets';
     font-weight: 500;
   }
 
+  /* Background image for the business section */
   .bussiness__background {
+    display: none;
     background-image: url('../assets/jpg/bussiness.jpg');
-    background-size: cover;
-    background-position-y: center;
-    background-position-x: left;
+    background-position: left center;
     background-repeat: no-repeat;
+    background-size: cover;
     height: 100%;
     z-index: 1;
-    display: none;
   }
 
+  /* Image styling */
   .bussiness__img {
     display: inline-block;
     width: 100%;
@@ -141,87 +148,63 @@ import { Image, Picture } from 'astro:assets';
     z-index: 2;
   }
 
-  /* sm: Para dispositivos con un ancho mínimo de 640px (teléfonos grandes y pequeños en horizontal) */
-  @media (width >= 640px) {
-    .bussiness__contain {
-      grid-template-columns: 1fr;
-    }
+  /* Media queries */
 
+  /* For devices with a minimum width of 640px */
+  @media (min-width: 640px) {
     .bussiness__location-title {
       font-size: 1.5rem;
     }
   }
 
-  /* md: Para dispositivos con un ancho mínimo de 768px (tablets en modo vertical y laptops pequeñas) */
-  @media (width >= 768px) {
-    .bussiness__contain {
-      grid-template-columns: 1fr;
-    }
-    .bussiness__location-title {
-      font-size: 1.5rem;
-    }
-  }
-
-  /* lg: Para dispositivos con un ancho mínimo de 1024px (tablets en modo horizontal y laptops estándar) */
-  @media (width >= 1024px) {
+  /* For devices with a minimum width of 1024px */
+  @media (min-width: 1024px) {
     .bussiness__rectangle {
       display: block;
       left: -15%;
       bottom: -12.5%;
     }
+
     .bussiness__background {
       display: block;
     }
+
     .bussiness__img {
       display: none;
     }
+
     .bussiness__location-title {
       font-size: 2rem;
     }
+
     .bussiness__contain {
       grid-template-columns: 40% 60%;
     }
   }
 
-  /* xl: Para dispositivos con un ancho mínimo de 1280px (laptops grandes y monitores de escritorio) */
-  @media (width >= 1280px) {
+  /* For devices with a minimum width of 1280px */
+  @media (min-width: 1280px) {
     .bussiness__rectangle {
-      display: block;
-      left: -15%;
       bottom: -20%;
     }
-    .bussiness__background {
-      display: block;
-    }
-    .bussiness__img {
-      display: none;
-    }
+
     .bussiness__location-title {
       font-size: 2rem;
     }
-    .bussiness__contain {
-      grid-template-columns: 40% 60%;
-    }
   }
 
-  /* 2xl: Para dispositivos con un ancho mínimo de 1536px (pantallas ultra grandes y monitores 4K) */
-  @media (width >= 1536px) {
+  /* For devices with a minimum width of 1536px */
+  @media (min-width: 1536px) {
     .bussiness__rectangle {
-      display: block;
       left: -10%;
       bottom: -12.5%;
     }
-    .bussiness__background {
-      display: block;
-    }
-    .bussiness__img {
-      display: none;
-    }
+
     .bussiness__location-title {
       font-size: 2.5rem;
     }
-    .bussiness__contain {
-      grid-template-columns: 40% 60%;
-    }
   }
 </style>
+
+
+
