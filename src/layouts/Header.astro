@@ -84,28 +84,7 @@ import { Image } from 'astro:assets';
     border-radius: var(--border-radius);
   }
 
-  @media (max-width: 1024px) {
-    .header__nav {
-      padding: 1rem;
-      padding-top: var(--header-padding-top);
-      position: absolute;
-      flex-direction: column;
-      top: 0;
-      right: 0;
-      background-color: var(--background-header);
-      height: 100dvh;
-      width: fit-content;
-      align-items: end;
-    }
-    .header__nav--hidden {
-      right: -100%;
-    }
-
-    .header__mobile-menu {
-      display: flex;
-    }
-  }
-
+  
   .header__nav-item {
     color: var(--white);
     font-size: 1.25rem;
@@ -123,12 +102,33 @@ import { Image } from 'astro:assets';
   .header__nav-item--active {
     background-color: var(--blue);
   }
+@media (max-width: 1024px) {
+  .header__nav {
+    padding: 1rem;
+    padding-top: var(--header-padding-top);
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    background-color: var(--background-header);
+    height: 100dvh;
+    width: fit-content;
+    align-items: end;
+  }
+  .header__nav--hidden {
+    right: -100%;
+  }
+
+  .header__mobile-menu {
+    display: flex;
+  }
+}
 </style>
 <script>
   const header = document.getElementsByClassName('header')[0];
   const navItems = document.querySelectorAll('.header__nav-item');
   const sections = document.querySelectorAll('section[id]');
-
+  
   // Función para manejar el scroll y activar el nav-item correspondiente
   const handleScroll = () => {
     const { scrollY, innerHeight } = window;
