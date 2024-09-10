@@ -126,7 +126,7 @@ import undrawCertificate from '../assets/png/undrawCertificate.png';
     gap: 1rem;
     width: var(--contain-width);
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 1fr;
   }
 
   .our-services__card {
@@ -159,7 +159,7 @@ import undrawCertificate from '../assets/png/undrawCertificate.png';
     gap: 2rem;
     width: var(--contain-width);
     text-shadow: var(--text-shadow);
-    grid-template-rows: auto auto;
+    grid-auto-rows: 1fr;
   }
 
   .our-services__technical-assistant-contain-text {
@@ -212,10 +212,6 @@ import undrawCertificate from '../assets/png/undrawCertificate.png';
       font-size: 1.5rem;
     }
 
-    .our-services__cards {
-      grid-template-rows: repeat(5, 1fr);
-    }
-
     .our-services__card-text {
       font-size: 1.25rem;
     }
@@ -229,7 +225,6 @@ import undrawCertificate from '../assets/png/undrawCertificate.png';
 
     .our-services__cards {
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
     }
 
     .our-services__card-svg {
@@ -255,7 +250,6 @@ import undrawCertificate from '../assets/png/undrawCertificate.png';
   @media (min-width: 1024px) {
     .our-services__cards {
       grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
     }
 
     .our-services__card-svg {

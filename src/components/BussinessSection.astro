@@ -1,6 +1,6 @@
 ---
 import location from '../assets/svg/location.svg';
-import bussiness from '../assets/jpg/bussiness.jpg';
+import backgroundBussiness from '../assets/jpg/backgroundBussiness.jpg';
 import { Image, Picture } from 'astro:assets';
 ---
 
@@ -36,7 +36,7 @@ import { Image, Picture } from 'astro:assets';
     <span class="bussiness__background"></span>
     <Image
       class="bussiness__img"
-      src={bussiness}
+      src={backgroundBussiness}
       alt="Nuestro local"
       loading="lazy"
       quality={100}
@@ -131,7 +131,7 @@ import { Image, Picture } from 'astro:assets';
   /* Background image for the business section */
   .bussiness__background {
     display: none;
-    background-image: url('../assets/jpg/bussiness.jpg');
+    background-image: url('../assets/jpg/backgroundBussiness.jpg');
     background-position: left center;
     background-repeat: no-repeat;
     background-size: cover;
