@@ -57,7 +57,7 @@ import { Image } from 'astro:assets';
       background-position: center;
       background-repeat: no-repeat;
     }
-  
+
     /* Overlay filter for footer */
     .footer__filter {
       position: absolute;
@@ -67,7 +67,7 @@ import { Image } from 'astro:assets';
       height: 100%;
       background-color: rgba(255, 255, 255, 0.8);
     }
-  
+
     /* Footer content grid layout */
     .footer__contain {
       display: grid;
@@ -79,7 +79,7 @@ import { Image } from 'astro:assets';
       position: relative;
       z-index: 2;
     }
-  
+
     /* Navigation section hidden by default */
     .footer__nav {
       display: none;
@@ -89,23 +89,23 @@ import { Image } from 'astro:assets';
       justify-self: center;
       align-self: flex-start;
     }
-  
+
     .footer__nav-title {
       font-size: 1.5rem;
       font-weight: 700;
     }
-  
+
     .footer__nav-item {
       font-size: 1.2rem;
     }
-  
+
     .footer__nav-link {
       text-decoration: none;
       font-size: 1.25rem;
       font-weight: 500;
       color: var(--blue);
     }
-  
+
     /* Contact section styling */
     .footer__contact {
       display: flex;
@@ -115,62 +115,60 @@ import { Image } from 'astro:assets';
       justify-self: center;
       align-self: flex-start;
     }
-  
+
     .footer__contact-title {
       font-size: 1.5rem;
       font-weight: 700;
     }
-  
+
     .footer__contact-item-contain {
       display: flex;
       gap: 0.5rem;
       align-items: center;
     }
-  
+
     .footer__contact-item {
       font-size: 1.25rem;
       font-weight: 500;
     }
-  
+
     .footer__contact-item-svg {
       height: 2rem;
       width: 2rem;
     }
-  
+
     /* Footer logo hidden by default */
     .footer__logo {
       display: none;
       height: 5rem;
     }
-  
+
     /* Media queries */
-  
+
     /* For devices with a minimum width of 768px (tablets and small laptops) */
     @media (min-width: 768px) {
       .footer__contain {
         grid-template-columns: 1fr 1fr;
       }
-  
+
       .footer__contact {
         justify-self: center;
       }
-  
+
       .footer__logo {
         display: block;
       }
     }
-  
+
     /* For devices with a minimum width of 1280px (large laptops and desktops) */
     @media (min-width: 1280px) {
       .footer__contain {
         grid-template-columns: repeat(3, 1fr);
       }
-  
+
       .footer__nav {
         display: flex;
       }
     }
   </style>
-  
-  
 </footer>
