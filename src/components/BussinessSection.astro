@@ -33,7 +33,6 @@ import { Image, Picture } from 'astro:assets';
         </p>
       </span>
     </span>
-    <span class="bussiness__background"></span>
     <Image
       class="bussiness__img"
       src={backgroundBussiness}
@@ -128,17 +127,6 @@ import { Image, Picture } from 'astro:assets';
     font-weight: 500;
   }
 
-  /* Background image for the business section */
-  .bussiness__background {
-    display: none;
-    background-image: url('../assets/jpg/backgroundBussiness.jpg');
-    background-position: left center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    z-index: 1;
-  }
-
   /* Image styling */
   .bussiness__img {
     display: inline-block;
@@ -163,14 +151,6 @@ import { Image, Picture } from 'astro:assets';
       display: block;
       left: -15%;
       bottom: -12.5%;
-    }
-
-    .bussiness__background {
-      display: block;
-    }
-
-    .bussiness__img {
-      display: none;
     }
 
     .bussiness__location-title {
