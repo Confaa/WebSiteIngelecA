@@ -7,7 +7,7 @@ const fadeInPage = () => {
   anime({
     targets: 'body',
     opacity: [0, 1],
-    duration: 300,
+    duration: 800,
     easing: 'easeOutQuad',
   });
 };
@@ -23,15 +23,6 @@ const animateOnScroll = (entries, observer) => {
         case 'fadeIn':
           anime({
             targets: target,
-            opacity: [0, 1],
-            duration: 1000,
-            easing: 'easeOutQuad',
-          });
-          break;
-        case 'slideIn':
-          anime({
-            targets: target,
-            translateX: ['-100%', 0],
             opacity: [0, 1],
             duration: 800,
             easing: 'easeOutQuad',

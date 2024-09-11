@@ -1,5 +1,5 @@
 ---
-import { Image, Picture } from 'astro:assets';
+import { Image } from 'astro:assets';
 import store from '../assets/svg/store.svg';
 import handshake from '../assets/svg/handshake.svg';
 import blocks from '../assets/svg/blocks.svg';
@@ -7,7 +7,7 @@ import circuitBoard from '../assets/svg/circuitBoard.svg';
 import zap from '../assets/svg/zap.svg';
 import wegBlanco from '../assets/svg/wegBlanco.svg';
 import check from '../assets/svg/check.svg';
-import undrawCertificate from '../assets/png/undrawCertificate.png';
+import undrawCertificate from '../assets/webp/undrawCertificate.webp';
 ---
 
 <section class="our-services" id="servicios">
@@ -95,10 +95,9 @@ import undrawCertificate from '../assets/png/undrawCertificate.png';
         >
       </span>
     </div>
-    <Picture
+    <Image
       src={undrawCertificate}
       class="our-services__technical-assistant-img our-services__technical-assistant-img--ilustration"
-      formats={['avif', 'webp']}
       alt="Ilustración"
       loading="lazy"
       quality={100}
