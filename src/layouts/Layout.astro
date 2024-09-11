@@ -27,6 +27,7 @@ const { title } = Astro.props;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <script src="../utils/animations.js"></script>
     <title>{title}</title>
   </head>
   <body>
@@ -39,7 +40,6 @@ const { title } = Astro.props;
       <BussinessSection />
     </Main>
     <Footer />
-
     <script>
       const smoothScroll = (target: string, duration: number) => {
         const targetElement = document.querySelector(target);

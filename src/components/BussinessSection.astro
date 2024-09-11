@@ -4,7 +4,7 @@ import backgroundBussiness from '../assets/jpg/backgroundBussiness.jpg';
 import { Image, Picture } from 'astro:assets';
 ---
 
-<section class="bussiness" id="nuestro-local">
+<section class="bussiness hidden" data-animation="fadeIn" id="nuestro-local">
   <span class="bussiness__rectangle"></span>
   <div class="bussiness__contain">
     <span class="bussiness__contain-location">
@@ -149,7 +149,7 @@ import { Image, Picture } from 'astro:assets';
   @media (min-width: 1024px) {
     .bussiness__rectangle {
       display: block;
-      left: -15%;
+      left: -20%;
       bottom: -12.5%;
     }
 
@@ -164,10 +164,6 @@ import { Image, Picture } from 'astro:assets';
 
   /* For devices with a minimum width of 1280px */
   @media (min-width: 1280px) {
-    .bussiness__rectangle {
-      bottom: -20%;
-    }
-
     .bussiness__location-title {
       font-size: 2rem;
     }
@@ -175,11 +171,6 @@ import { Image, Picture } from 'astro:assets';
 
   /* For devices with a minimum width of 1536px */
   @media (min-width: 1536px) {
-    .bussiness__rectangle {
-      left: -10%;
-      bottom: -12.5%;
-    }
-
     .bussiness__location-title {
       font-size: 2.5rem;
     }

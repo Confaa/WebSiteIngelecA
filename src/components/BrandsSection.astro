@@ -20,8 +20,11 @@ import { Image, Picture } from 'astro:assets';
 
 <section class="brands" id="marcas">
   <Picture src={wave1} class="brands__wave" alt="Olas" />
-  <h2 class="brands__title">MARCAS CON LAS QUE TRABAJAMOS</h2>
-  <div class="brands__items">
+
+  <h2 class="brands__title hidden" data-animation="fadeIn">
+    MARCAS CON LAS QUE TRABAJAMOS
+  </h2>
+  <div class="brands__items hidden" data-animation="fadeIn">
     <Image src={weg} class="brands__item" alt="WEG" loading="lazy" />
     <Image src={finder} class="brands__item" alt="Finder" loading="lazy" />
     <Image src={ersha} class="brands__item" alt="Ersha" loading="lazy" />
@@ -61,7 +64,7 @@ import { Image, Picture } from 'astro:assets';
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 6rem 2rem;
+    padding: 2rem;
     gap: 3rem;
     background-color: var(--white);
     position: relative;
@@ -73,7 +76,8 @@ import { Image, Picture } from 'astro:assets';
     position: absolute;
     top: -1%;
     left: 0;
-    width: 102%;
+    width: 100dvw;
+    height: auto;
     object-fit: cover;
   }
 
@@ -115,6 +119,13 @@ import { Image, Picture } from 'astro:assets';
     }
   }
 
+  /* For devices with a minimum width of 768px */
+  @media (min-width: 768px) {
+    .brands {
+      padding-top: 6rem;
+    }
+  }
+
   /* For devices with a minimum width of 1024px */
   @media (min-width: 1024px) {
     .brands__title {
@@ -139,6 +150,12 @@ import { Image, Picture } from 'astro:assets';
 
   /* For devices with a minimum width of 1536px */
   @media (min-width: 1536px) {
+    .brands {
+      padding-top: 10rem;
+    }
+    .brands__wave {
+      top: -5%;
+    }
     .brands__title {
       font-size: 2.5rem;
     }

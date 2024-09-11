@@ -11,9 +11,11 @@ import undrawCertificate from '../assets/png/undrawCertificate.png';
 ---
 
 <section class="our-services" id="servicios">
-  <h2 class="our-services__title">NUESTROS SERVICIOS</h2>
+  <h2 class="our-services__title hidden" data-animation="fadeIn">
+    NUESTROS SERVICIOS
+  </h2>
 
-  <div class="our-services__cards">
+  <div class="our-services__cards hidden" data-animation="fadeIn">
     <span class="our-services__card">
       <Image src={store} class="our-services__card-svg" alt="Icono" />
       <p class="our-services__card-text">Venta de insumos eléctricos</p>
@@ -43,7 +45,7 @@ import undrawCertificate from '../assets/png/undrawCertificate.png';
       </p>
     </span>
   </div>
-  <div class="our-services__technical-assistant">
+  <div class="our-services__technical-assistant hidden" data-animation="fadeIn">
     <Image
       src={wegBlanco}
       class="our-services__technical-assistant-img"
@@ -108,7 +110,7 @@ import undrawCertificate from '../assets/png/undrawCertificate.png';
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 6rem 2rem;
+    padding: 6rem 2rem 2rem 2rem;
     background-color: var(--blue);
     gap: 3rem;
     position: relative;
@@ -154,12 +156,10 @@ import undrawCertificate from '../assets/png/undrawCertificate.png';
 
   .our-services__technical-assistant {
     display: grid;
-    margin-top: 4rem;
     align-items: center;
     gap: 2rem;
     width: var(--contain-width);
     text-shadow: var(--text-shadow);
-    grid-auto-rows: 1fr;
   }
 
   .our-services__technical-assistant-contain-text {
@@ -263,6 +263,7 @@ import undrawCertificate from '../assets/png/undrawCertificate.png';
 
     .our-services__technical-assistant {
       grid-template-columns: 1fr 2fr 1fr;
+      margin-top: 4rem;
     }
 
     .our-services__technical-assistant-img--ilustration {

@@ -137,6 +137,8 @@ import { Image } from 'astro:assets';
   const header = document.getElementsByClassName('header')[0];
   const navItems = document.querySelectorAll('.header__nav-item');
   const sections = document.querySelectorAll('section[id]');
+  const mobileMenu = document.querySelector('.header__mobile-menu');
+  const nav = document.querySelector('.header__nav');
 
   // Función para manejar el scroll y activar el nav-item correspondiente
   const handleScroll = () => {
@@ -206,11 +208,16 @@ import { Image } from 'astro:assets';
   });
 
   // Mostrar/ocultar el menú de navegación móvil
-  document
-    .querySelector('.header__mobile-menu')
-    ?.addEventListener('click', () => {
-      document
-        .querySelector('.header__nav')
-        ?.classList.toggle('header__nav--hidden');
+  mobileMenu?.addEventListener('click', () => {
+    nav?.classList.toggle('header__nav--hidden');
+  });
+
+  // Cerrar el menú móvil cuando se hace clic en un ítem de navegación
+  navItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      if (!nav?.classList.contains('header__nav--hidden')) {
+        nav?.classList.add('header__nav--hidden');
+      }
     });
+  });
 </script>
